@@ -1,6 +1,6 @@
 Feature: Medicine_module
 
-  Background: User should be able to search for a medicine and add item to cart in pharmeasy application
+  Background: User should be able to search for a medicine and add item to cart in pharmeasy application via chrome
     Given User should be able to launch the browser
     Then User should be able to enter homepage of pharmeasy application
     When User should be able to click on medicine module
@@ -18,6 +18,7 @@ Feature: Medicine_module
     Then User is able to login with "<mobile_number>"
     And User is able to click on send otp
     And User should be able to click on continue
+
 
 
     Examples:
