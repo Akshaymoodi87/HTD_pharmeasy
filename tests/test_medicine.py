@@ -1,6 +1,7 @@
 import pytest
 from POM.medicine_page import MedicinePage
 from library.excel_lib import Readexcel
+from library.config import Configuration
 import datetime
 
 
@@ -27,8 +28,9 @@ class TestMedicinePage:
             me.click_send_otp()
             me.click_continue()
 
-        except BaseException:
+        except AssertionError as error_msg:
             td = datetime.datetime.now()
             name = f"screenshot_{td.hour}_{td.minute}_{td.second}.png"
-            path = r"C:\Users\Adithya M M\PycharmProjects\pharmeasy\screenshot"
-            driver.save_screenshot(path + name)
+            # path = r"C:\Users\Adithya M M\PycharmProjects\pharmeasy\screenshot"
+            driver.save_screenshot(Configuration.Screenshot+name)
+            raise error_msg

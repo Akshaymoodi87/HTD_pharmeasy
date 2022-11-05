@@ -21,8 +21,8 @@ class MedicinePage:
 
     def click_enter_pin(self, pin):
         if isinstance(pin, float):
-            pin = str(int(pin))
-        assert len(pin) == 6
+            pin = (int(pin))
+        assert len(str(pin)) == 6
         locator = self.medicine_locators["enter_pin"]
         self.driver.find_element(*locator).send_keys(pin)
 
